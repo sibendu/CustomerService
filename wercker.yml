@@ -15,9 +15,9 @@ build:
   steps:
     # A step that changes gradlew permission
     - script:
-        name: chmod +x ./gradlew
+        name: chmod +x gradlew
         code: |
-          chmod +x ./gradlew
+          chmod +x gradlew
     # A step that executes `gradle build` command
     - script:
         name: gradle build
