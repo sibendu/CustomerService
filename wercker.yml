@@ -22,7 +22,7 @@ build:
     - script:
         name: gradle build
         code: |
-          ./gradlew --full-stacktrace -q --project-cache-dir=$WERCKER_CACHE_DIR build
+          gradlew --full-stacktrace -q --project-cache-dir=$WERCKER_CACHE_DIR build
 push:
   steps:
     # Push to public docker repo
