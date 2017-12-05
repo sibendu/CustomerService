@@ -27,7 +27,11 @@ build:
         name: run gradle
         code: |
           ./gradlew --full-stacktrace -q --project-cache-dir=$WERCKER_CACHE_DIR build
-
+    # A step that executes `gradle build` command
+    - script:
+        name: copy jar
+        code: |
+          mv ./build/libs/CustomerService-1.0.jar CustomerService-1.0.jar
 push:
   steps:
     # Push to public docker repo
@@ -37,4 +41,4 @@ push:
         tag: $DOCKER_TAG
         repository: $DOCKER_REPOSITORY
         registry: $DOCKER_REGISTRY
-        cmd: java -jar pipeline/build/libs/CustomerService-1.0.jar
+        cmd: java -jar CustomerService-1.0.jar
