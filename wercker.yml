@@ -17,6 +17,11 @@ dev:
 build:
   # The steps that will be executed on build
   steps:
+    # A step that changes gradlew permission
+    - script:
+        name: chmod +x gradlew
+        code: |
+          chmod +x gradlew
     # A step that executes `gradle build` command
     - script:
         name: run gradle
