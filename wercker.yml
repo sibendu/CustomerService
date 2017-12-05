@@ -36,4 +36,4 @@ push:
         password: $DOCKER_PASSWORD
         tag: $DOCKER_TAG
         repository: $DOCKER_REPOSITORY
-        registry: https://registry.hub.docker.com
+        registry: $DOCKER_REGISTRY
