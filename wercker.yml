@@ -26,7 +26,7 @@ build:
     - script:
         name: run gradle
         code: |
-          ./gradlew --full-stacktrace -q --project-cache-dir=$WERCKER_CACHE_DIR build
+          ./gradlew build
     # A step that executes `gradle build` command
     - script:
         name: copy jar
