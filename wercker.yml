@@ -1,11 +1,15 @@
 # docker box definition
-box: java
+box:
+  id: openjdk
+  ports:
+    - "8080"
 
 # defining the dev pipeline
 dev:
   steps:
+    # A step that executes `gradle bootRun` command
     - script:
-      name: gradle bootRun
+      name: run gradle
       code: |
         ./gradlew bootRun
 
@@ -13,22 +17,8 @@ dev:
 build:
   # The steps that will be executed on build
   steps:
-    # A step that changes gradlew permission
-    - script:
-        name: chmod +x gradlew
-        code: |
-          chmod +x gradlew
     # A step that executes `gradle build` command
     - script:
-        name: gradle build
+        name: run gradle
         code: |
           ./gradlew --full-stacktrace -q --project-cache-dir=$WERCKER_CACHE_DIR build
-push:
-  steps:
-    # Push to public docker repo
-    - internal/docker-push: 
-        username: $DOCKER_USERNAME
-        password: $DOCKER_PASSWORD
-        tag:  my-amazing-tag
-        repository: $DOCKER_REPOSITORY
-        registry: https://registry.hub.docker.com
