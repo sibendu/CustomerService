@@ -3,7 +3,7 @@ buildscript {
 		springBootVersion = '1.4.3.RELEASE'
 	}
 	repositories {
-		maven { url "http://repo.spring.io/release" }
+		maven { url "http://repo.spring.io/libs-snapshot-local" }
 		mavenCentral()
 		jcenter()
 	}
@@ -24,25 +24,21 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 repositories {
-	maven { url "http://repo.spring.io/release" }
+	maven { url "http://repo.spring.io/libs-snapshot-local" }
 		mavenCentral()
 		jcenter()
 }
 
-dependencies {	
+
+dependencies {
+	
+
 	compile('org.springframework.boot:spring-boot-starter-web')
-    testCompile("org.springframework.boot:spring-boot-starter-test")
-    
-       //swagger jars
+	
+   //swagger jars
     compile("io.springfox:springfox-swagger2:2.5.0")
     compile("io.springfox:springfox-swagger-ui:2.5.0")
-}
 
-dependencyManagement {
-	imports {
-		mavenBom "org.springframework.cloud:spring-cloud-dependencies:Camden.SR2"
-
-	}
 }
 
 task wrapper(type: Wrapper) {
