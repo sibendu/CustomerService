@@ -43,7 +43,6 @@ public class Application {
 		List<Customer> customers = new ArrayList<Customer>();
 		customers.add(new Customer("Sibendu", "Das", new Integer(41), null));
 		customers.add(new Customer("Mehul", "Das", new Integer(4), null));
-		customers.add(new Customer("John", "Doe", new Integer(30), new Double(10000.50)));
 
 		// events.forEach((ev) -> System.out.println(ev.toString()));
 		return new ResponseEntity<List<Customer>>(customers, HttpStatus.OK);
