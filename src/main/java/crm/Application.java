@@ -44,6 +44,7 @@ public class Application {
 		customers.add(new Customer("Sibendu", "Das", new Integer(41), null));
 		customers.add(new Customer("Mehul", "Das", new Integer(4), null));
 		customers.add(new Customer("John", "Doe", new Integer(41), null));
+		customers.add(new Customer("Jayaram", "Chitturi", new Integer(41), null));
 		
 		// events.forEach((ev) -> System.out.println(ev.toString()));
 		return new ResponseEntity<List<Customer>>(customers, HttpStatus.OK);
