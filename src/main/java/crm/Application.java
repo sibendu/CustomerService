@@ -46,6 +46,7 @@ public class Application {
 		customers.add(new Customer("John", "Doe", new Integer(41), null));
 		customers.add(new Customer("Jayaram", "Chitturi", new Integer(41), null));
 		customers.add(new Customer("Sangam", "2017", new Integer(41), null));
+		customers.add(new Customer("Sangam", "2018", new Integer(41), null));
 
 		
 		// events.forEach((ev) -> System.out.println(ev.toString()));
